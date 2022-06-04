@@ -91,6 +91,7 @@ function hideKeyboard(element) {
       element.blur();  //actually close the keyboard
       // Remove readonly attribute after keyboard is hidden.
       element.removeAttribute('readonly');
+      element.
   }, 100);
 }
 
@@ -434,10 +435,11 @@ for(let i = 0; i < inputBox.length; i++){
       curInputEl = inputBox[i];
       prevInputEl.style.border="1px solid blue";
     }
+    
+    hideKeyboard(inputBox[i]);
     if(!curInputEl.readOnly){
       curInputEl.style.border = "0.3rem solid rgb(59, 69, 152)";
     }
-    hideKeyboard(inputBox[i]);
     saveInputPreviousValue(inputBox[i]);
   }, false);
   inputBox[i].addEventListener('input', function(e){
