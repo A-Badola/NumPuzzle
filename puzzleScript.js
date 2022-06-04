@@ -449,7 +449,9 @@ for(let i = 0; i < inputBox.length; i++){
     checkIfEmpty(e);
   }, false);
   inputBox[i].addEventListener('focusin', function(e){
-    hideKeyboard(inputBox[i]);
+    if(!inputBox[i].readOnly){
+      hideKeyboard(inputBox[i]);
+    }
     saveInputPreviousValue(e);
   }, false);
 }
