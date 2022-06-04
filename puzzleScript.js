@@ -91,7 +91,6 @@ function hideKeyboard(element) {
       element.blur();  //actually close the keyboard
       // Remove readonly attribute after keyboard is hidden.
       element.removeAttribute('readonly');
-      element.
   }, 100);
 }
 
