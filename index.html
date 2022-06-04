@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numerical Puzzle</title>
+  <link href="scss/styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    
+    <div class="timeNumComponent">
+      <div class ="timeNumBar">
+        <div id="time">
+          <p><span id="minutes">00</span>:<span id="seconds">00</span></p>
+        </div>
+        <div id="puzzleNum"><span id="currentPuzzle">1</span>/<span id="totalPuzzle">X</span></div>
+      </div>       
+      <button class = "doneButton" id="doneButton" disabled>✔</button>
+    </div>
+    <div id="startPuzzleModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p class="close">&times;</p>
+        <h3 id="htp">----HOW TO PLAY----</h1>
+        <p id="startNote">The aim is to fill each empty field with a number which is sum of the two numbers directly beneath it. <br/> When all the blocks are filled. press the green button to check the answer and move forward. <br /> The game ends when you completely solve five pyramids correctly. </p>
+        <p id="LastNote">Try to solve in the shortest time possible.</p>
+        <button id="startPuzzle">START</button>
+      </div>
+    </div>
+    <div id="finishPuzzleModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p class="close">&times;</p>
+        <p id="bestScore"></p>
+        <p id="currentScore"></p>
+        <button id="startOver">START</button>
+      </div>
+    </div>
+    <div class="box puzzleArea" id="puzzleArea"></div>
+    <div class="box keypad">
+      <button class="span_two" id="clrButton">CLR</button>
+      <button class="numberData">0</button>
+      <button class="numberData">1</button>
+      <button class="numberData">2</button>
+      <button class="numberData">3</button>
+      <button class="numberData">4</button>
+      <button class="numberData">5</button>
+      <button class="numberData">6</button>
+      <button class="numberData">7</button>
+      <button class="numberData">8</button>
+      <button class="numberData">9</button>
+    </div>
+  </div>
+  <script src = "cookieHandle.js"></script>
+  <script src = "puzzleScript.js"></script>
+</body>
+</html>

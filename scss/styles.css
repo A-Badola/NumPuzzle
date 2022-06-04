@@ -1,0 +1,407 @@
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: normal;
+}
+
+body {
+  padding: 2%;
+  margin: 0;
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#68b6e6), color-stop(#bbe5f2), color-stop(#bbe5f2), to(#68b6e6));
+  background: linear-gradient(to bottom, #68b6e6, #bbe5f2, #bbe5f2, #68b6e6);
+}
+
+.container {
+  margin: auto;
+  width: 45%;
+  background: #fffbfb;
+  border: 5px solid black;
+  height: 45rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 10rem;
+  /* The Close Button */
+}
+
+@media only screen and (max-width: 950px) {
+  .container {
+    width: 95%;
+    height: 45rem;
+  }
+}
+
+@media only screen and (max-height: 680px) {
+  .container {
+    height: 39.25rem;
+    width: 95%;
+  }
+}
+
+.container .timeNumComponent {
+  width: 98%;
+  height: 16%;
+  margin: 0.25rem;
+  padding: 1%;
+}
+
+.container .timeNumComponent > .timeNumBar {
+  padding: 0% 4%;
+  font-size: large;
+  color: #24295b;
+  border: 0.08rem solid;
+  background: radial-gradient(#e8eff4, #8ab9d7);
+  -webkit-box-shadow: -2px -4px 5px 2px #387091 inset;
+          box-shadow: -2px -4px 5px 2px #387091 inset;
+  margin-bottom: 0.55rem;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
+}
+
+.container .timeNumComponent > .timeNumBar > p {
+  font-size: large;
+  border: 0.075rem solid;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2%;
+}
+
+.container .timeNumComponent > .timeNumBar #puzzleNum {
+  text-align: right;
+}
+
+.container .timeNumComponent > .timeNumBar #puzzleNum > span {
+  padding: 1%;
+  margin: 2%;
+}
+
+.container .modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 8rem;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.container .modal > .modal-content {
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  border: 4px solid black;
+  background: -webkit-gradient(linear, left top, left bottom, from(#68b6e6), color-stop(#bbe5f2), color-stop(#bbe5f2), to(#68b6e6));
+  background: linear-gradient(to bottom, #68b6e6, #bbe5f2, #bbe5f2, #68b6e6);
+  margin: auto;
+  padding: 20px;
+  width: 40%;
+  height: 60%;
+}
+
+@media only screen and (max-width: 950px) {
+  .container .modal > .modal-content {
+    width: 95%;
+    height: 40%;
+    font-size: small;
+    padding: 1%;
+  }
+}
+
+.container .modal > .modal-content > .close {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 2%;
+  border: 1px solid black;
+  border-radius: 50%;
+  -webkit-box-shadow: 2px 4px 5px 1px #387091;
+          box-shadow: 2px 4px 5px 1px #387091;
+}
+
+.container .modal > .modal-content > p {
+  width: 50%;
+  margin-top: 5%;
+  margin-bottom: 6%;
+  padding: 2%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 2px solid #9292fd;
+  background: radial-gradient(#f3fafc, #e1eaf0);
+  -webkit-box-shadow: 2px 4px 5px 1px #91cef1;
+          box-shadow: 2px 4px 5px 1px #91cef1;
+}
+
+@media only screen and (max-width: 950px) {
+  .container .modal > .modal-content > p {
+    width: 95%;
+    font-size: small;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+}
+
+.container .modal > .modal-content > button {
+  cursor: pointer;
+  width: 80%;
+  height: 30%;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 0.08rem solid;
+  background: radial-gradient(#e8eff4, #8ab9d7);
+  -webkit-box-shadow: 0 0.22rem #394b68;
+          box-shadow: 0 0.22rem #394b68;
+}
+
+.container #startPuzzleModal {
+  display: block;
+}
+
+.container #startPuzzleModal > .modal-content > h3 {
+  text-align: center;
+  padding-left: 10%;
+}
+
+.container #startPuzzleModal > .modal-content > p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: justify;
+  width: 80%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 1%;
+}
+
+@media only screen and (max-width: 950px) {
+  .container #startPuzzleModal > .modal-content > p {
+    width: 95%;
+    font-size: small;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+  }
+}
+
+.container #startPuzzleModal > .modal-content > #startPuzzle {
+  cursor: pointer;
+  width: 45%;
+  height: 20%;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 950px) {
+  .container #startPuzzleModal > .modal-content > #startPuzzle {
+    width: 55%;
+    height: 10%;
+    font-size: 1rem;
+  }
+}
+
+.container #startPuzzleModal > .modal-content > .close {
+  font-weight: lighter;
+  font-size: 1.25rem;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 950px) {
+  .container #startPuzzleModal > .modal-content > .close {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+.container #finishPuzzleModal > .modal-content > p {
+  width: 50%;
+  margin-top: 5%;
+  margin-bottom: 6%;
+  padding: 1%;
+}
+
+.container #finishPuzzleModal > .modal-content > #startOver {
+  cursor: pointer;
+  width: 80%;
+  height: 30%;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 950px) {
+  .container #finishPuzzleModal > .modal-content > #startOver {
+    width: 45%;
+    height: 40%;
+    font-size: 2rem;
+  }
+}
+
+.container #finishPuzzleModal > .modal-content > .close {
+  font-weight: small;
+  font-size: 1.25rem;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 950px) {
+  .container #finishPuzzleModal > .modal-content > .close {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+.container .close {
+  color: #1c1b1b;
+  float: right;
+  font-weight: bold;
+}
+
+.container .close:hover,
+.container .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container .box {
+  width: 100%;
+  height: 42%;
+  padding: 3.0%;
+}
+
+.container .keypad {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: (6rem)[3];
+      grid-template-columns: repeat(3, 6rem);
+}
+
+.container .keypad > .span_two {
+  grid-column: span 2;
+}
+
+.container .keypad > button {
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 0.12rem;
+  border: 1px solid black;
+  border-radius: 0.35rem;
+  -webkit-box-shadow: 0 0.22rem #788cad;
+          box-shadow: 0 0.22rem #788cad;
+  height: 3.60rem;
+  outline: none;
+  background: radial-gradient(rgba(201, 230, 250, 0.5), #70a7c9);
+}
+
+@media only screen and (max-height: 660px) {
+  .container .keypad > button {
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+}
+
+.container .keypad > button:hover {
+  background-color: #4e5382;
+}
+
+.container .keypad > button:active {
+  background-color: #70a7c9;
+  -webkit-box-shadow: 0 0.15 #405e8e;
+          box-shadow: 0 0.15 #405e8e;
+  -webkit-transform: translateY(0.1rem);
+          transform: translateY(0.1rem);
+}
+
+.puzzleRow {
+  height: 20%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.puzzleRow > input {
+  font-weight: bold;
+  font-size: large;
+  border: 1px solid blue;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  caret-color: transparent;
+  -webkit-box-shadow: -2px -4px 5px 1px #91cef1;
+          box-shadow: -2px -4px 5px 1px #91cef1;
+}
+
+.puzzleRow > input:focus {
+  outline: none;
+}
+
+#doneButton {
+  margin-left: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 2px 5px 2px #D8D7D7;
+          box-shadow: 1px 2px 5px 2px #D8D7D7;
+}
+
+#startOver:hover {
+  background: #a8affa;
+}
+
+#startOver:active {
+  background: #70a7c9;
+  -webkit-box-shadow: 0 0.15 #2c456d;
+          box-shadow: 0 0.15 #2c456d;
+  -webkit-transform: translateY(0.1rem);
+          transform: translateY(0.1rem);
+}
+
+#startPuzzle:hover {
+  background: #a8affa;
+}
+
+#startPuzzle:active {
+  background: #70a7c9;
+  -webkit-box-shadow: 0 0.15 #2c456d;
+          box-shadow: 0 0.15 #2c456d;
+  -webkit-transform: translateY(0.1rem);
+          transform: translateY(0.1rem);
+}
+/*# sourceMappingURL=styles.css.map */
