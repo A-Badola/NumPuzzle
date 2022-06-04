@@ -91,6 +91,7 @@ function hideKeyboard(element) {
       element.blur();  //actually close the keyboard
       // Remove readonly attribute after keyboard is hidden.
       element.removeAttribute('readonly');
+      element.style.border = "0.3rem solid rgb(59, 69, 152)";
   }, 100);
 }
 
@@ -435,8 +436,8 @@ for(let i = 0; i < inputBox.length; i++){
       prevInputEl.style.border="1px solid blue";
     }
     
-    hideKeyboard(inputBox[i]);
-    if(!curInputEl.readOnly){
+    if(!curInputEl.readOnly){      
+      hideKeyboard(curInputEl);
       curInputEl.style.border = "0.3rem solid rgb(59, 69, 152)";
     }
     saveInputPreviousValue(inputBox[i]);
