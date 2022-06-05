@@ -337,7 +337,7 @@ doneBtn.addEventListener('click', function(){
   curTotalSec += sec;
   curTotalMin += min;
 
-  if(curTotalSec > 60){
+  if(curTotalSec >= 60){
     curTotalMin += Math.floor(curTotalSec/60);
     curTotalSec = curTotalSec%60;
   }
