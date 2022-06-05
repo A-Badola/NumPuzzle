@@ -104,10 +104,10 @@ function finalResultModal(){
   minTotalSec = minTotalTime%60;
   console.log(minTotalMin + " " + minTotalSec);
   let bestScoreEl = document.getElementById('bestScore');
-  bestScoreEl.textContent = "Best Time: " + minTotalMin + ":" + minTotalSec;
+  bestScoreEl.textContent = "Best Time: " + (minTotalMin>9?minTotalMin: "0"+minTotalMin) + ":" + (minTotalSec>9?minTotalSec: "0"+minTotalSec);
   bestScoreEl.fontSize = "2rem";
   let currentScoreEl = document.getElementById('currentScore');
-  currentScoreEl.textContent ="Time: " + curTotalMin + ":" + curTotalSec;
+  currentScoreEl.textContent ="Time: " + (curTotalMin>9?curTotalMin: "0"+curTotalMin) + ":" + (curTotalSec>9?curTotalSec: "0"+curTotalSec);
   currentScoreEl.fontSize = "2rem";
   finishmodal.style.display = "block";
 
