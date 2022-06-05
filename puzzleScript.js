@@ -115,6 +115,8 @@ function finalResultModal(){
   startOverBtn.addEventListener('click', function(){
     finishmodal.style.display = "none";
     totalPuzzleSolved = 0;
+    curTotalMin = 0;
+    curTotalSec = 0;
     curPuzzleEl.textContent = '1';
     getPuzzle();      
     timeComponentFunc();
