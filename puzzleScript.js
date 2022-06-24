@@ -23,7 +23,7 @@ startPuzzleBtn.addEventListener('click', function(){
   startmodal.style.display = "none";
   totalPuzzleSolved = 0;
   curPuzzleEl.textContent = '1';
-  getPuzzle();    
+  getPuzzle();      
   timeComponentFunc();
 }, false);
 
@@ -102,7 +102,6 @@ function finalResultModal(){
   let minTotalTime = getCookie("minTotalTime");
   minTotalMin = Math.floor(minTotalTime/60);
   minTotalSec = minTotalTime%60;
-  console.log(minTotalMin + " " + minTotalSec);
   let bestScoreEl = document.getElementById('bestScore');
   bestScoreEl.textContent = "Best Time: " + (minTotalMin>9?minTotalMin: "0"+minTotalMin) + ":" + (minTotalSec>9?minTotalSec: "0"+minTotalSec);
   bestScoreEl.fontSize = "2rem";
@@ -119,7 +118,6 @@ function finalResultModal(){
     curTotalSec = 0;
     curPuzzleEl.textContent = '1';
     getPuzzle();      
-    timeComponentFunc();
   }, false);
 }
 
@@ -262,10 +260,6 @@ for(let i = 0; i < n; i++){
 
 choosePos(p, n, n*(n+1)/2 , 4, 0);
 
-console.log("total configs : " + ans.size);
-
-
-console.log(valueChanged);
 let puzzle = []; 
 function getPuzzle() {  
   valueChanged = n*(n+1)/2;
@@ -288,7 +282,6 @@ function getPuzzle() {
     }
   }
 
-  console.log(puzzle);
   let totalpuzzleConfig = ans.size;
   let configNumber = Math.floor(Math.random()*totalpuzzleConfig);
   // moving set in array 
@@ -303,9 +296,7 @@ function getPuzzle() {
 
   let config = ansArr[configNumber];
   valueChanged -= ansArr[configNumber].length;
-  console.log(valueChanged);
-  console.log(configNumber);
-  console.log(config);
+
   let idx = 0;
   for(let i = 0; i < n; i++){
     let row = document.getElementById('row'+(i+1));
@@ -327,22 +318,20 @@ function getPuzzle() {
   
   min = 0;
   sec = 0;
-
 }
 
 //attaching an event to the button to get next Puzzle
 doneBtn.addEventListener('click', function(){
-  console.log("button clicked");
+
   totalPuzzleSolved++;
+  //console.log(min + " " + sec);
   curTotalSec += sec;
   curTotalMin += min;
-
+  //console.log(curTotalMin + " " + curTotalSec);
   if(curTotalSec >= 60){
     curTotalMin += Math.floor(curTotalSec/60);
     curTotalSec = curTotalSec%60;
   }
-
-  console.log(totalPuzzleSolved);
 
   if(totalPuzzleSolved === 5){
     finalResultModal();
@@ -374,9 +363,7 @@ function checkValidSolution(){
       curChild = curChild.nextSibling;
     }
   }
-  console.log("solution check")
   if(isValidSol){
-    console.log("Im Done");
     doneBtn.removeAttribute('disabled');
     doneBtn.style.backgroundColor = "rgba(30, 255, 0, 0.863)";    
     doneBtn.style.boxShadow = "1px 2px 5px 2px #57E503";
@@ -394,7 +381,7 @@ function saveInputPreviousValue(curInp){
 }
 
 function updateValueChangedHelper(curInp){
-  console.log("valueChanged");
+  
   if(!isNumber(curInp.value)){
     curInp.value = 'X';
   }
@@ -403,7 +390,6 @@ function updateValueChangedHelper(curInp){
     valueChanged--;
     saveInputPreviousValue(curInp);
   }
-  console.log(valueChanged);
   if(valueChanged === 0){
     checkValidSolution();
   }
@@ -421,7 +407,6 @@ function checkIfEmpty(e){
   if(el.value === ""){
     el.value = 'X';
     valueChanged++;
-    console.log(valueChanged);
   }
 }
 
@@ -462,7 +447,6 @@ function clearInputHelper(el){
   if(el.value != 'X'){
     el.value = 'X';
     valueChanged++;
-    console.log(valueChanged);
     saveInputPreviousValue(el);
   }
 }
